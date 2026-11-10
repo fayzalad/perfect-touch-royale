@@ -21,7 +21,11 @@ This is the canonical project structure. Start with task-relevant files below. O
 - `vite.config.ts` - Vite configuration with React, Tailwind CSS v4, and Figma Make plugins plus the `@` alias for `src`
 - `.mise.toml` - Toolchain versions for Node.js and pnpm
 
-## Dependencies
+## Deployment & GitHub Pages
+
+- **Free Account Protection**: The user is on a free GitHub account. NEVER use GitHub Actions cloud runners (`.github/workflows/*.yml` or `build_type: workflow`).
+- **Deploy Command**: Always use `pnpm run deploy` (or `node scripts/deploy.mjs`), which builds locally in ~300ms and pushes the static output to the `gh-pages` branch. This is 100% free forever and uses 0 GitHub Actions compute minutes.
+
 
 - Runtime: React 19 and React DOM 19
 - Styling: Tailwind CSS v4 with the `@tailwindcss/vite` plugin
