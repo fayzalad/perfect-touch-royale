@@ -20,7 +20,7 @@ try {
   run("git init -q -b gh-pages", tmp);
   run("git add -A", tmp);
   run(
-    `git -c user.name="deploy" -c user.email="deploy@users.noreply.github.com" commit -q -m "Deploy ${sha}"`,
+    `git -c user.name="deploy" -c user.email="deploy@users.noreply.github.com" commit -q --allow-empty -m "Deploy ${sha}"`,
     tmp
   );
   run(`git push -f "${remote}" gh-pages`, tmp);
